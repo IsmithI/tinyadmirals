@@ -1,62 +1,97 @@
 
 sand-tileset.png
-size: 256,256
+size: 462,132
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-1
-  rotate: false
-  xy: 1, 133
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-2
-  rotate: false
-  xy: 1, 67
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-3
-  rotate: false
-  xy: 67, 133
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-4
+tile
   rotate: false
   xy: 1, 1
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: -1
-6
-  rotate: false
-  xy: 67, 67
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-7
-  rotate: false
-  xy: 133, 133
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-8
+  index: 6
+tile
   rotate: false
   xy: 67, 1
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: -1
-9
+  index: 7
+tile
+  rotate: false
+  xy: 133, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 9
+tile
+  rotate: false
+  xy: 199, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 22
+tile
+  rotate: false
+  xy: 265, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 23
+tile
+  rotate: false
+  xy: 331, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 25
+tile
+  rotate: false
+  xy: 397, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 36
+tile
+  rotate: false
+  xy: 1, 67
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 37
+tile
+  rotate: false
+  xy: 67, 67
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 52
+tile
   rotate: false
   xy: 133, 67
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: -1
+  index: 53
+tile
+  rotate: false
+  xy: 199, 67
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 54
+tile
+  rotate: false
+  xy: 265, 67
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 55
+tile
+  rotate: false
+  xy: 331, 67
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 57
