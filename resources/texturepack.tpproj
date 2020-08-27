@@ -129,13 +129,52 @@ filterMag=Linear
 filterMin=Linear
 ignoreBlankImages=true
 maxHeight=2048
+maxWidth=512
+minHeight=16
+minWidth=16
+paddingX=2
+paddingY=2
+pot=false
+mof=false
+rotation=false
+stripWhitespaceX=false
+stripWhitespaceY=false
+wrapX=ClampToEdge
+wrapY=ClampToEdge
+premultiplyAlpha=false
+grid=true
+square=false
+bleed=true
+limitMemory=true
+useIndexes=true
+
+scaleFactors=[{suffix:"",factor:1,resampling:bicubic}]
+inputFiles=[{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_06.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_07.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_09.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_22.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_23.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_25.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_54.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_55.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_57.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_36.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_37.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_52.png,type:Input,regionName:null},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_53.png,type:Input,regionName:null}]
+
+
+---
+
+name=forts
+filename=
+output=../android/assets/atlas
+
+alias=true
+alphaThreshold=0
+debug=false
+duplicatePadding=false
+edgePadding=true
+fast=false
+filterMag=Nearest
+filterMin=Nearest
+ignoreBlankImages=true
+maxHeight=2048
 maxWidth=2048
 minHeight=16
 minWidth=16
 paddingX=2
 paddingY=2
 pot=true
-mof=true
+mof=false
 rotation=false
 stripWhitespaceX=false
 stripWhitespaceY=false
@@ -149,7 +188,7 @@ limitMemory=true
 useIndexes=true
 
 scaleFactors=[{suffix:"",factor:1,resampling:bicubic}]
-inputFiles=[{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_07.png,type:Input,regionName:2},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_06.png,type:Input,regionName:1},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_09.png,type:Input,regionName:3},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_22.png,type:Input,regionName:4},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_25.png,type:Input,regionName:6},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_54.png,type:Input,regionName:7},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_55.png,type:Input,regionName:8},{path:C:\\Users\\Smith\\Desktop\\kenney_piratepack (1)\\PNG\\Default size\\Tiles\\tile_57.png,type:Input,regionName:9}]
+inputFiles=[{path:fort-1.png,type:Input,regionName:null}]
 
 
 -PROJ-

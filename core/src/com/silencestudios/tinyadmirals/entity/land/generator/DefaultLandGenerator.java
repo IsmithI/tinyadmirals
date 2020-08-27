@@ -5,11 +5,14 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
+import com.silencestudios.gdxengine.component.PhysicsBody;
 import com.silencestudios.gdxengine.component.RepeatedSpriteDrawer;
 import com.silencestudios.gdxengine.component.SpriteRenderer;
 import com.silencestudios.gdxengine.component.Transform;
 import com.silencestudios.gdxengine.instance.Instance;
-import com.silencestudios.tinyadmirals.entity.TileLabel;
+import com.silencestudios.tinyadmirals.entity.fort.Fort;
 import com.silencestudios.tinyadmirals.entity.land.LandProperties;
 import com.silencestudios.tinyadmirals.entity.land.Water;
 import com.silencestudios.tinyadmirals.entity.tile.Tile;
@@ -31,7 +34,7 @@ public class DefaultLandGenerator implements LandGenerator {
     }
 
     @Override
-    public void generate(Entity land) {
+    public LandData generate(Entity land) {
         Transform transform = land.getComponent(Transform.class);
         LandProperties landProperties = land.getComponent(LandProperties.class);
 
@@ -84,6 +87,7 @@ public class DefaultLandGenerator implements LandGenerator {
             }
         }
 
+        Fort fort = null;
         for (int y = 0; y < landProperties.height; y++) {
             for (int x = 0; x < landProperties.width; x++) {
                 TileProperties tileProperties = landData.getAt(x, y);
@@ -91,18 +95,31 @@ public class DefaultLandGenerator implements LandGenerator {
 
                 if (tileProperties.tileType == TileType.LAND) {
                     Tile tile = Instance.get().create(Tile.class);
-                    tile.add(tileProperties);
                     tile.transform.moveTo(x, y);
                     tile.transform.setZ(Layers.TILES);
+
+                    PhysicsBody physicsBody = new PhysicsBody();
+                    physicsBody.bodyDef.type = BodyDef.BodyType.StaticBody;
+
+                    PolygonShape polygonShape = new PolygonShape();
+                    polygonShape.setAsBox(0.5f, 0.5f);
+
+                    physicsBody.fixtureDef.shape = polygonShape;
+                    physicsBody.bodyDef.gravityScale = 0;
+
+                    tile.add(physicsBody);
+                    tile.add(tileProperties);
+
+                    if (index == 255 && fort == null) {
+                        fort = Instance.get().create(Fort.class);
+                        fort.transform.moveTo(x, y);
+                        transform.addChild(fort);
+                    }
 
                     if (TileMap.map.containsKey(index))
                         tileProperties.tileIndex = TileMap.map.get(index);
                     else
                         tileProperties.tileIndex = 23;
-
-                    TileLabel tileLabel = Instance.get().create(TileLabel.class);
-                    tileLabel.label.setText(index + ": " + tileProperties.tileType);
-                    tile.transform.addChild(tileLabel);
 
                     Sprite sprite = textureAtlas.createSprite("tile", tileProperties.tileIndex);
                     if (sprite != null) {
@@ -114,5 +131,7 @@ public class DefaultLandGenerator implements LandGenerator {
                 }
             }
         }
+
+        return landData;
     }
 }

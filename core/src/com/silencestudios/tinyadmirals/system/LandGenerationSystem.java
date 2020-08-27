@@ -9,11 +9,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.silencestudios.gdxengine.component.Transform;
 import com.silencestudios.gdxengine.instance.Instance;
+import com.silencestudios.tinyadmirals.component.Pathfinder;
+import com.silencestudios.tinyadmirals.entity.PathfinderLandData;
 import com.silencestudios.tinyadmirals.entity.land.LandProperties;
+import com.silencestudios.tinyadmirals.entity.land.generator.LandData;
 import com.silencestudios.tinyadmirals.entity.land.generator.LandGenerator;
 
 public class LandGenerationSystem extends EntitySystem {
 
+    private LandData landData;
     private LandGenerator landGenerator;
     private static final Family family = Family.all(Transform.class, LandProperties.class).get();
 
@@ -22,7 +26,22 @@ public class LandGenerationSystem extends EntitySystem {
         engine.addEntityListener(family, new EntityListener() {
             @Override
             public void entityAdded(Entity entity) {
-                landGenerator.generate(entity);
+                landData = landGenerator.generate(entity);
+            }
+
+            @Override
+            public void entityRemoved(Entity entity) {
+
+            }
+        });
+
+        engine.addEntityListener(Family.all(Pathfinder.class).get(), new EntityListener() {
+            @Override
+            public void entityAdded(Entity entity) {
+                for (Entity unit : engine.getEntitiesFor(Family.all(Pathfinder.class).get())) {
+                    Pathfinder pathfinder = unit.getComponent(Pathfinder.class);
+                    pathfinder.landData = new PathfinderLandData(landData);
+                }
             }
 
             @Override

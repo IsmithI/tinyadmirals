@@ -63,4 +63,7 @@ public class LandData {
         }
     }
 
+    public boolean isLandAt(int x, int y) {
+        return tiles[x][y].tileType == TileType.LAND;
+    }
 }
